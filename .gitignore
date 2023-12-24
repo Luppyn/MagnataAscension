@@ -1,0 +1,8 @@
+**/__pycache__
+.pytest_cache
+.env
+.pylintrc
+.vscode
+.git
+ssh-key*
+venv
