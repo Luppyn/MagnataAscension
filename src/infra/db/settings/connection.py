@@ -10,7 +10,7 @@ class DBConnectionHandler:
             getenv('user'),
             getenv('password'),
             getenv('host'),
-            getenv('port'),
+            getenv('port'), 
             getenv('database'),
         )
 
