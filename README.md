@@ -1,2 +1,2 @@
 # InvestmentSimulator
-Jogo Simulador Econômico 2d Online
+Jogo Simulador Econômico 2D Online
