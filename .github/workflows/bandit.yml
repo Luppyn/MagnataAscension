@@ -32,16 +32,18 @@ jobs:
       - uses: actions/checkout@v2
       - name: Cache
         uses: actions/cache@v4.0.2
+        env:
+          cache-name: cache-node-modules
         with:
           # A list of files, directories, and wildcard patterns to cache and restore
-          path: .
+          path: ~/.gradle/caches
           # An explicit key for restoring and saving the cache
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           # An ordered list of keys to use for restoring stale cache if no cache hit occurred for key. Note `cache-hit` returns false in this case.
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+            npm-feature-${{ hashFiles('package-lock.json') }}
+            npm-feature-
+            npm-
           # The chunk size used to split up large files during upload, in bytes
           upload-chunk-size: 1024
           # An optional boolean when enabled, allows windows runners to save or restore caches that can be restored or saved respectively on other platforms
